@@ -1,0 +1,23 @@
+﻿body{
+	background-color: #efeff4;
+	font-family:"Times New Roman",Georgia,Serif;
+	font-size: 15px;
+	margin: 0;
+}
+.container{
+	padding: 5%;
+}
+.container img{
+	width:100%;
+}
+p{
+	text-indent: 15px;
+	line-height:160%;
+}
+.container a{
+	color: #00BFFF;
+	text-decoration:none;
+}
+.mail{
+	color: #00BFFF;
+}

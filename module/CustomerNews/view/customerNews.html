@@ -1,0 +1,212 @@
+<div class="container">
+    <div  ng-repeat="item in results">
+        <div class="header">
+            <img ng-src="module\CustomerNews\img/user-icon.png">
+            <div class="user"><img  ng-src="module\CustomerNews\img\user.png">&nbsp;&nbsp;<span ng-bind="item.customer.customerName"></span></div>
+            <div class="mobile"><img  ng-src="module/CustomerNews/img/mobile.png">&nbsp;&nbsp;<span ng-bind="item.customer.mobilePhone"></span></div>
+        </div>
+
+        <div class="page"  ng-if="item.orders !=">
+            <!--<% if(item.orders!=""){%>-->
+            <!--<%_.each(item.orders,function(item,index) {%>-->
+            <div  ng-repeat="itemLone in item.orders">
+                <div class="weui_cells_title">订单信息</div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>订单名称</p>
+                        </div>
+                        <div class="weui_cell_ft" ng-bind="itemLone.packageName"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>生效时间</p>
+                        </div>
+                        <div class="weui_cell_ft" ng-bind="itemLone.activeDate"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>截至时间</p>
+                        </div>
+                        <div class="weui_cell_ft" ng-bind="itemLone.expiredDate"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>付款状态</p>
+                        </div>
+                        <div class="weui_cell_ft" ng-bind="itemLone.payStatus"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <div class="weui_cells_title">账户信息</div>
+            <div class="weui_cells">
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>账户余额</p>
+                    </div>
+                    <div class="weui_cell_ft" ng-bind="item.customer.accountBalance+'元' "></div>
+                </div>
+            </div>
+
+            <div ng-if="item.orderItems !=''">
+                <div  ng-repeat="itemService in item.orderItems">
+                    <div class="weui_cells">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <p>服务名称</p>
+                            </div>
+                            <div class="weui_cell_ft" ng-bind="itemService.serviceId"></div>
+                        </div>
+                    </div>
+                    <div class="weui_cells">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <p>剩余流量</p>
+                            </div>
+                            <div class="weui_cell_ft" ng-bind="itemService.leftAmount+'MB'"></div>
+                        </div>
+                    </div>
+                    <div class="weui_cells">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <p>总共流量</p>
+                            </div>
+                            <div class="weui_cell_ft" ng-bind="itemService.packageAmount +'MB'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <div ng-if="item.customer.ipAll !=''">
+                <div class="weui_cells_title">IP列表</div>
+                <div  ng-repeat="itemIp in item.customer.ipAll">
+                    <div class="weui_cells">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <p>IP地址段</p>
+                            </div>
+                            <div class="weui_cell_ft" ng-bind="itemIp"><%=item%></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--<script type="text/template" id="tpl_list">-->
+    <!--<%_.each(body,function(item,index) {%>-->
+    <!--<div class="header">-->
+        <!--<img src="images/user-icon.png">-->
+        <!--<div class="user"><img src="images/user.png">&nbsp;&nbsp;<span><%=item.customer.customerName%></span></div>-->
+        <!--<div class="mobile"><img src="images/mobile.png">&nbsp;&nbsp;<span><%=item.customer.mobilePhone%></span></div>-->
+    <!--</div>-->
+    <!--<div class="page">-->
+        <!--<% if(item.orders!=""){%>-->
+        <!--<%_.each(item.orders,function(item,index) {%>-->
+        <!--<div class="weui_cells_title">订单信息</div>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>服务名称</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item.packageName%></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>生效时间</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item.activeDate%></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>截至时间</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item.expiredDate%></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>付款状态</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item.payStatus%></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<%});%>-->
+        <!--<% } %>-->
+    <!--</div>-->
+    <!--<div class="page">-->
+        <!--<div class="weui_cells_title">账户信息</div>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>账户余额</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item.customer.accountBalance%>(元)</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<% if(item.orderItems!=""){%>-->
+        <!--<%_.each(item.orderItems,function(item,index) {%>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>服务名称</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item.serviceId%></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>剩余流量</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item.leftAmount%>(MB)</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>总共流量</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item.packageAmount%>(MB)</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<%});%>-->
+        <!--<% } %>-->
+    <!--</div>-->
+    <!--<div class="page">-->
+        <!--<div class="weui_cells_title">IP列表</div>-->
+        <!--<% if(item.customer.ipAll!=""){%>-->
+        <!--<%_.each(item.customer.ipAll,function(item,index) {%>-->
+        <!--<div class="weui_cells">-->
+            <!--<div class="weui_cell">-->
+                <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<p>IP地址段</p>-->
+                <!--</div>-->
+                <!--<div class="weui_cell_ft"><%=item%></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<%});%>-->
+        <!--<% } %>-->
+    <!--</div>-->
+    <!--<%});%>-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

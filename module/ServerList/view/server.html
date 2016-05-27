@@ -1,0 +1,47 @@
+<div class="container" ng-repeat="item in results">
+        <div class="page">
+            <div class="bd">
+                <div class="weui_cells" ng-hide="true">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>事例ID</p></div>
+                        <div class="weui_cell_ft example" ng-bind="item.instanceId"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>客户名称</p></div>
+                        <div class="weui_cell_ft example" ng-bind-html="item.customerName"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>任务名称</p></div>
+                        <div class="weui_cell_ft example">流量<span ng-bind="item.serviceName"></span>任务</div>
+                    </div>
+                </div>
+                <ip-show ip="item.ipField"></ip-show>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>防护状态</p></div>
+                        <div class="weui_cell_ft example" ng-bind="item.status"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>开始时间</p> </div>
+                        <div class="weui_cell_ft example"  ng-bind="item.activateTime"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>结束时间</p> </div>
+                        <div class="weui_cell_ft example"  ng-bind="item.terminateTime"></div>
+                    </div>
+                </div>
+                <time-end time="item.deadline" ng-show="timeCheck"></time-end>
+                <div class="btns" ng-click="stop(item)">
+                    <button class="weui_btn weui_btn_default btn weui_btn_warn stop" ng-disabled="ButtonStop">停止</button>
+                </div>
+            </div>
+        </div>
+</div>

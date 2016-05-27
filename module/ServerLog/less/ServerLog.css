@@ -1,0 +1,104 @@
+﻿/* server-header*/
+.weui_btn{
+	border-radius: 0;
+}
+html, body{
+	margin:0;
+	height:100%;
+	background-color:#efeff4;
+}
+.header{
+	position: fixed;
+	top:0;
+	width: 100%;
+	height:35px;
+	text-align: center;
+	background-color: #04be02;
+	font-size: large;
+	letter-spacing: normal;
+	color: white;
+	padding: 5px 0;
+	z-index: 9999;
+}
+.js_container{
+	background-color: #FFFFFF;
+}
+.page_query_zero{
+	margin: 75px 0;
+	background-color:#efeff4;
+	overflow-y:auto;
+	-webkit-overflow-scrolling:touch;
+	text-align: center;
+	padding:50px 0;
+}
+/*server-内容样式*/
+.page{
+	margin: 65px 0 -35px 0;
+	overflow-y:auto;
+	padding: 0 25px;
+}
+.bd{
+	background-color:white;
+}
+.weui_cells{
+	margin-top: 0px;
+	line-height:1.8;
+}
+.dis{
+	display: none;
+}
+/*查询*/
+.page_query{
+	margin: 0;
+	background-color:white;
+	overflow-y:auto;
+	-webkit-overflow-scrolling:touch
+}
+.page_sea{
+	margin: 0 0 55px 0;
+	overflow-y:auto;
+	-webkit-overflow-scrolling:touch;
+	background-color:white;
+}
+.fail_content{
+	background-color: #efeff4;
+	text-align: center;
+	padding:50px;
+
+}
+
+.ct{
+	text-align: center;
+}
+.weui_cells_title{
+	font-size: large;
+}
+.weui_label{
+	color:#888;
+}
+.pic{
+	width: 25px;
+	height: 25px;
+}
+.red{
+	color: red;
+}
+.weui_btn_area{
+	margin-top: 30px;
+}
+.weui_select{
+	color:#888;
+}
+.page_query_zero{
+	margin: 85px 0;
+	text-align: center;
+}
+/*.start_time , .stop_time{
+	outline: 0;
+	-webkit-appearance: none;
+	background-color: transparent;
+	font-size: inherit;
+	color: #888;
+	height: 1.41176471em;
+	line-height: 1.41176471;
+}*/

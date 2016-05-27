@@ -1,0 +1,68 @@
+<div class="page1">
+    <div class="bd">
+        <div class="weui_cells_title">客户名称:<span class="red dis tip_1">&nbsp;(请您选择客户！)</span></div>
+        <div class="weui_cells weui_cells_split" ng-click="getCustomer()">
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <select class="weui_select" ng-model="CustomerSelect" ng-options=" customer as customer.customerName for customer in customers">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui_cells_title service" ng-hide="ServiceStatus">服务:</div>
+        <div class="weui_cells weui_cells_split" ng-hide="ServiceStatus">
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <select class="weui_select" name="select1">
+                        <option value="0" class="grey">请选择</option>
+                        <option value="1" data-id="1" class="grey">压制</option>
+                        <option value="2" data-id="2" class="grey">清洗</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui_cells_title"  ng-hide="ServiceDirection">压制方向:<span class="red dis tip_3">&nbsp;( 当您选择压制时，这个选项必填！)</span></div>
+        <div class="weui_cells weui_cells_split"  ng-hide="ServiceDirection">
+            <div class="weui_cell weui_cell_select">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <select class="weui_select" name="select1" ng-model="selectedValue"
+                            ng-options="option.value as option.label for option in selectValue">
+                            <option value="">请选择</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="weui_cells_title">防护时长:<span class="red dis tip_4">&nbsp;( 请您选择防护时长！)</span></div>
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell timeSelect">
+              <input type="text"  ng-model="day" required ><span>天</span>
+                <input type="text" ng-model="hour" required ><span>小时</span>
+                <input type="text"  ng-model="minute" required ><span>分钟</span>
+            </div>
+        </div>
+
+        <div class="weui_cells_title">防护IP地址（地址/掩码）:<span class="red dis tip_5">&nbsp;(请输入您要防护的IP！)</span></div>
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell ipContainer">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_textarea" id="ipField" ng-click="IpShow()" ng-model="ipField" placeholder="请输入或选择IP地址!" required/>
+                </div>
+            </div>
+        </div>
+        <div class="weui_cells weui_cells_form ip" ng-show="IpListShow">
+            <div  class="classlist" id="allBox">
+                <ul ng-repeat="ipSingle in ipAll" id="allSitesBoxContent">
+                    <li class='seo' ng-bind="ipSingle" ng-click="ipSelect($event)"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="weui_btn_area start_btn_container">
+            <button class="weui_btn weui_btn_primary start_btn" ng-click="StartServer()" ng-disabled="ButtonStat">启动</button>
+        </div>
+    </div>
+</div>

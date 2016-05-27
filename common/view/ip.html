@@ -1,0 +1,18 @@
+<div ng-repeat="app in items">
+        <div ng-if="$index=='0'">
+            <div class="weui_cells" >
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary"><p>防护范围</p></div>
+                    <div class="weui_cell_ft example" ng-bind="app"></div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="$index!=0">
+            <div class="weui_cells" >
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary"><p></p></div>
+                    <div class="weui_cell_ft example" ng-bind="app"></div>
+                </div>
+            </div>
+        </div>
+    </div>

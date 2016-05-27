@@ -1,0 +1,43 @@
+﻿body{
+	height: 100%;
+	background-color:#efeff4;
+}
+.container{
+	position: relative;
+}
+.header{
+	position: relative;
+	height:80px;
+	margin-bottom: 20px;
+}
+.header > img{
+	display: inline-block;
+	height:80px;
+	width:80px;
+	position: absolute;
+	top:20%;
+	left:7%;
+}
+.header div img{
+	height:16px;
+	width:12px;
+}
+.mobile{
+	position: absolute;
+	top:60px;
+	left:35%;
+}
+.user{
+	position: absolute;
+	top:30px;
+	left:35%;
+}
+.page{
+	margin: 0 0 15px 0;
+	overflow-y:auto;
+	padding: 0 25px;
+	-webkit-overflow-scrolling:touch
+}
+.weui_cells{
+	margin-top: 0;
+}

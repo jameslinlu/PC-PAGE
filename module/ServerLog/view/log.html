@@ -1,0 +1,107 @@
+<div class="container" ng-repeat="item in results" ng-show="ListPage">
+        <div id="query" class="header" ng-click="QueryList()">
+            <div >查询</div>
+        </div>
+        <div class="page">
+            <div class="bd">
+                <div class="weui_cells" ng-hide="true">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>事例ID</p></div>
+                        <div class="weui_cell_ft example" ng-bind="item.instanceId"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>客户名称</p></div>
+                        <div class="weui_cell_ft example" ng-bind-html="item.customerName"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>任务名称</p></div>
+                        <div class="weui_cell_ft example">流量<span ng-bind="item.serviceName"></span>任务</div>
+                    </div>
+                </div>
+                <!--<div class="weui_cells">-->
+                    <!--<div class="weui_cell">-->
+                        <!--<div class="weui_cell_bd weui_cell_primary"><p>防护范围</p></div>-->
+                        <!--<div class="weui_cell_ft example" ng-bind="item.ipField"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <ip-show ip="item.ipField"></ip-show>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>防护状态</p></div>
+                        <div class="weui_cell_ft example" ng-bind="item.status"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>开始时间</p> </div>
+                        <div class="weui_cell_ft example"  ng-bind="item.activateTime"></div>
+                    </div>
+                </div>
+                <div class="weui_cells">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary"><p>结束时间</p> </div>
+                        <div class="weui_cell_ft example"  ng-bind="item.terminateTime"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+<div class="container js_container" ng-show="SelectPage">
+    <div class="page_query" id="first">
+        <div class="bd">
+            <div class="weui_cells_title">客户</div>
+            <div class="weui_cells weui_cells_split">
+                <div class="weui_cell weui_cell_select">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <select class="weui_select"  ng-model="CustomerSelect" ng-options=" customer.customerId as customer.customerName for customer in customers">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui_cells_title">服务</div>
+            <div class="weui_cells weui_cells_split">
+                <div class="weui_cell weui_cell_select">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <select class="weui_select" name="select1" ng-model="selectedValue"
+                                ng-options="option.value as option.label for option in selectValue">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui_cells_title">起始时间</div>
+            <div class="weui_cells weui_cells_form">
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><label for="" class="weui_label font_dark">时间</label></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input class="start_time font_dark" ng-model="StartTime" type="date"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui_cells_title">截至时间</div>
+            <div class="weui_cells weui_cells_form">
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><label for="" class="weui_label font_dark">时间</label></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input class="stop_time font_dark" ng-model="StopTime"type="date"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui_btn_area">
+                <a class="weui_btn weui_btn_primary js_cell" href="javascript:"  id="confirm" ng-click="ConfirmSelect()">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
